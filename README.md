@@ -1,1 +1,3 @@
-Aulas de Dynammic Fiap 2025
+Aulas de Dynammic Fiap - 2025
+
+Criação e manipulação de filas, sequencias e raciocinio logico com python.
