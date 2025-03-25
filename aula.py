@@ -19,10 +19,10 @@ Livro: Problems Solve Algorithms
 
 
 #Crie uma estrutura qual o número 1 seja possível adicionar cientes, 2 seja possível atender o primeiro cliente, 3 sair da estrutura
-
+"""
 documentos = []
 
-def menu():
+def menuAtendimento():
     while True:
         escolha = input(" Digite a escolha que deseja: 1-Add documento 2-Atender e 3-Sair")
         if escolha == '1':
@@ -32,7 +32,10 @@ def menu():
             AteLista(documentos)
         
         elif escolha == '3' :
+            print ("Saindo do menu...")
             break
+        else:
+            print("Escolha invalida!!!")
 
 def addLista(fila):
     while True:
@@ -49,16 +52,16 @@ def AteLista(fila):
     print(f"Atendendo {atendido}")
     
     
-while True:
-    print(menu())
+
     
 
-
+"""
 Exercicio 2 - Fila de impressão uma impressora recebe pedidos de diferentes usuários
 """
-alta, baixa = []
+alta = [] 
+baixa = []
 
-def menu():
+def menuImpressora():
     while True:
         escolha = input("Digite a escola que deseja: 1-add lista 2-Atender 3- Sair: ")
         if escolha == "1":
@@ -92,7 +95,22 @@ def atender(Alta, Baixa):
         while len(baixa)> 0:
             impressao = Baixa.pop(0)
             print(f"{impressao} foi atendida")
-            break
+        break
         
+    
+#Menu 3 com as duas opções para o usuário escolher
+def menu():
+    while True:
+        escolha = input("Digite qual menu deseja utilizar: ")
+        if (escolha == "Sair"):
+            print("Parando o menu...")
+            break
+        elif (escolha == "1"):
+            print(menuAtendimento())
+        elif (escolha == "2"):
+            print(menuImpressora())
+        else:
+            print("Opção Invalida!!!")
+            
 while True:
     print(menu())
