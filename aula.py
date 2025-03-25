@@ -24,14 +24,14 @@ documentos = []
 
 def menuAtendimento():
     while True:
-        escolha = input(" Digite a escolha que deseja: 1-Add documento 2-Atender e 3-Sair")
+        escolha = input(" Digite a escolha que deseja: 1-Add documento 2-Atender e 3-Sair: ")
         if escolha == '1':
             k = addLista(documentos) 
             print(k)
         elif escolha == '2':
             AteLista(documentos)
         
-        elif escolha == '3' :
+        elif escolha == '3':
             print ("Saindo do menu...")
             break
         else:
@@ -89,6 +89,7 @@ def addlista(Alta, Baixa):
 
 def atender(Alta, Baixa):
     while True:
+        print("Atenderemos por prioridade, primeiro faremos o atendimento do de Alta e após os de Baixa")
         while len(alta) > 0:
             impressao = Alta.pop(0)
             print(f"{impressao} foi atendida")
@@ -101,7 +102,7 @@ def atender(Alta, Baixa):
 #Menu 3 com as duas opções para o usuário escolher
 def menu():
     while True:
-        escolha = input("Digite qual menu deseja utilizar: ")
+        escolha = input("Digite qual menu deseja utilizar: 1-Menu Atendimento 2-Menu Atendimento Alto e Baixo: ")
         if (escolha == "Sair"):
             print("Parando o menu...")
             break
