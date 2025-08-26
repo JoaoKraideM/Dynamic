@@ -56,10 +56,15 @@ def par(lista):
 
 print(par(lista))
 
-
 #ex 3
 def busca_binaria(lista, elemento, inicio, fim):
-    inicio = 0
-    fim = len(lista) - 1
-    if inicio <= fim:
-        return lista[]
+    if inicio > fim:
+        return -1  
+    meio = (inicio + fim) // 2
+
+    if lista[meio] == elemento:
+        return meio  
+    elif elemento < lista[meio]:
+		return busca_binaria(lista, elemento, inicio, meio - 1)
+    else:
+		return busca_binaria(lista, elemento, meio + 1, fim)
