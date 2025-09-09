@@ -35,4 +35,4 @@ def escreve_arquivo(x):
         f.write(f"{x}\n")
     return x
 
-escreve_arquivo(1)
+escreve_arquivo(fib(5))

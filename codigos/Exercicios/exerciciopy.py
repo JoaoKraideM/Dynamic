@@ -1,26 +1,28 @@
-def potencia (base,expoente):
+def potencia(base, expoente):
     if expoente == 0:
-            return 1
+        return 1
     else:
         return base * potencia(base, expoente - 1)
 
 
-
 lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+
 def busca(lista, x):
-        if not lista:
-            return False
+    if not lista:
+        return False
+    else:
+        if lista[0] == x:
+            return True
         else:
-            if lista[0] == x:
-                return True
-            else:
-                return busca(lista[1:], x)
+            return busca(lista[1:], x)
 
 
 print(busca(lista, 2))
 
-
 lista = [1, 2, 2, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+
 def conta(lista, n):
     if n not in lista:
         return False
@@ -30,20 +32,23 @@ def conta(lista, n):
         else:
             return conta(lista[1:], n)
 
-print(conta(lista,2))
+
+print(conta(lista, 2))
 
 
-#ex 1
-def calculo(x,y):
-    if y == 0 or  x == 0:
+# ex 1
+def calculo(x, y):
+    if y == 0 or x == 0:
         return 0
     else:
         return y + calculo(x - 1, y)
 
-print(calculo(10,10))
 
-#ex 2
+print(calculo(10, 10))
+
+# ex 2
 lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
 
 def par(lista):
     if not lista:
@@ -54,26 +59,26 @@ def par(lista):
         else:
             return par(lista[1:])
 
+
 print(par(lista))
 
 
-#ex 3
+# ex 3
 def busca_binaria(lista, elemento, inicio, fim):
     if inicio > fim:
-        return -1  
+        return -1
     meio = (inicio + fim) // 2
 
     if lista[meio] == elemento:
-        return meio  
+        return meio
     elif elemento < lista[meio]:
-		return busca_binaria(lista, elemento, inicio, meio - 1)
+        return busca_binaria(lista, elemento, inicio, meio - 1)
     else:
-		return busca_binaria(lista, elemento, meio + 1, fim)
-       
+        return busca_binaria(lista, elemento, meio + 1, fim)
 
 
-#ex 4
-#Exercicio que procura em arquivos json (Dicionarios) os nomes dos membros da familia
+# ex 4
+# Exercicio que procura em arquivos json (Dicionarios) os nomes dos membros da familia
 familia = {
     'nome': 'Roberto Souza',
     'filhos': [
@@ -85,6 +90,7 @@ familia = {
         }
     ]
 }
+
 
 def PessoasFamilia(dicionario):
     nomes = []  # Lista para armazenar os nomes
@@ -103,20 +109,22 @@ def PessoasFamilia(dicionario):
             # Chama para os filhos restantes (sem o primeiro)
             filhos_restantes = dicionario['filhos'][1:]
             nomes.extend(PessoasFamilia({'filhos': filhos_restantes}))  # Chama para o restante dos filhos
-            
-            
- #Ex 5
- while True:
-     print(menu())
-     
-     
+
+
+    # Ex 5
+
+
+while True:
+    print(menu())
+
+
 def menu():
     print("===MENU===")
     print("1 - Cadastrar nome")
     print("2 - Listar pessoas")
     print("3 - Buscar um nome")
     print("4 - Sair do programa")
-    
+
     escolha = int(input("Digite qual programa deseja entrar: "))
     if escolha == 1:
         print(cadastraPessoa(familia))
@@ -131,12 +139,12 @@ def menu():
         break
     else:
         print("escolha inválida")
-        
- 
- def cadastraPessoa(familia):
-     nome = input("Digite o nome da pessoa que deseja cadastrar: ")
-     familia.append(nome)
-     print(f"{nome}Pessoa cadastrada com sucesso")
+
+
+def cadastraPessoa(familia):
+    nome = input("Digite o nome da pessoa que deseja cadastrar: ")
+    familia.append(nome)
+    print(f"{nome}Pessoa cadastrada com sucesso")
 
 
 def buscaNome(familia):
@@ -145,16 +153,17 @@ def buscaNome(familia):
         print(f"{busca} está na familia")
     else:
         print(f"{busca} não foi encontrado na familia")
-        
-        
+
+
 def deletaNome(familia):
     nome = input("Digite o nome que deseja achar: ").strip()
     if nome in familia:
         familia.remove(nome)
     else:
         print(f"{nome} não foi encontrado na familia")
-      
-#Ex 1 gpt
+
+
+# Ex 1 gpt
 lista = ()
 
 while True:
@@ -170,24 +179,29 @@ def menu():
     else:
         numeros.append(lista)
 
+
 def soma(lista):
     if not lista:
         return 0
     else:
         return lista[0] + soma(lista[1:])
-        
-#Ex 2
-lista = (["a","b", "c"])
+
+
+# Ex 2
+lista = (["a", "b", "c"])
+
 
 def contaLista(lista):
     if not lista:
         return 0
     else:
         return lista[0] + contaLista(lista[1:])
-        
-        
- #Ex 3
- dados = {
+
+
+    # Ex 3
+
+
+dados = {
     "pessoa1": {"nome": "João"},
     "pessoa2": {
         "nome": "Carlos",
@@ -197,15 +211,17 @@ def contaLista(lista):
     }
 }
 
+
 def buscaDicioario(dados, busca):
     if not dados:
         return False
-    elif 'busca'in dados:
+    elif 'busca' in dados:
         return True
     else:
         return False
-        
-#Ex 5
+
+
+# Ex 5
 dados = {
     "nome": "Ana",
     "endereco": {
@@ -214,6 +230,7 @@ dados = {
     },
     "profissao": "Dev"
 }
+
 
 def percorre(dados):
     if not dados:
